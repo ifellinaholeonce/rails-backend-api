@@ -1,0 +1,17 @@
+# == Schema Information
+#
+# Table name: line_items
+#
+#  id         :bigint(8)        not null, primary key
+#  product_id :integer
+#  order_id   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+valid_item:
+  product: :valid_product
+  order: :valid_order
+
