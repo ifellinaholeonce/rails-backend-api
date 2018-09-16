@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
       - name: shopify-internship-migrate
-        image: us.gcr.io/shopify-internship/gke_demo:e11f5cdbe8cbfc11dd7aa6a9a61d9c7e5ebdaecd
+        image: us.gcr.io/shopify-internship/docker:e11f5cdbe8cbfc11dd7aa6a9a61d9c7e5ebdaecd
         imagePullPolicy: Always
         args: ["bundle", "exec", "rake", "db:create", "db:migrate"]
         env:
