@@ -29,7 +29,7 @@ spec:
         - name: DB_PORT
           value: "3306"
         - name: DB_DBNAME
-          value: "captioned_images"
+          value: "shopify-internship-db"
         - name: IMAGE_STORAGE_BUCKET_NAME
           value: "shopify-internship-85e35b947e1a"
         - name: ASSETS_URL
