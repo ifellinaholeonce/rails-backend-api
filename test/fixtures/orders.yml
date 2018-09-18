@@ -14,3 +14,6 @@
 valid_order:
   shop: :valid_shop
 
+valid_order_two:
+  shop: :valid_shop_two
+

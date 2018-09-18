@@ -18,6 +18,7 @@
 class Product < ApplicationRecord
   belongs_to :shop
   has_many :line_items, dependent: :destroy, inverse_of: :product
+  has_many :orders, through: :line_items
 
   validates :shop, :price, presence: true
 end

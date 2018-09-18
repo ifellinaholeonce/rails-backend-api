@@ -18,4 +18,8 @@ class LineItem < ApplicationRecord
   def price
     product.price
   end
+
+  def shop_id
+    product.shop.id
+  end
 end

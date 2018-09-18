@@ -15,3 +15,10 @@ valid_item:
   product: :valid_product
   order: :valid_order
 
+valid_item_two:
+  product: :valid_product
+  order: :valid_order_two
+
+valid_item_three:
+  product: :valid_product
+  order: :valid_order_two

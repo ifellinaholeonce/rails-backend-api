@@ -1,18 +1,27 @@
 apiVersion: v1
 kind: Service
 metadata:
+  creationTimestamp: 2018-09-18T03:01:51Z
   labels:
-    run: shopify-internship
-  name: api-service
+    app: shopify-internship
+  name: shopify-internship-deployment
+  namespace: default
+  resourceVersion: "52897"
+  selfLink: /api/v1/namespaces/default/services/shopify-internship-deployment
+  uid: 30fcb974-baef-11e8-aa60-42010a960078
 spec:
-  type: NodePort
-  clusterIP: 10.35.248.54
+  clusterIP: 10.35.244.140
   externalTrafficPolicy: Cluster
   ports:
-  - nodePort: 32752
-    port: 8080
+  - nodePort: 30480
+    port: 80
     protocol: TCP
     targetPort: 3000
   selector:
-    run: shopify-internship
+    app: shopify-internship
   sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 35.221.22.137
