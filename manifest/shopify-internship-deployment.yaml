@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: shopify-internship-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: shopify-internship
+    spec:
+      containers:
+      - name: shopify-internship
+        image: gcr.io/shopify-internship-216622/shopify-internship
+        ports:
+        - containerPort: 3000
+        env:
+          - name: SECRET_KEY_BASE
+            valueFrom:
+              secretKeyRef:
+                name: shopify-internship-secrets
+                key: secret-key-base

@@ -1,0 +1,9 @@
+
+# [START runtime]
+runtime: custom
+env: flex
+entrypoint: bundle exec rackup -p $PORT
+# [END runtime]
+
+env_variables:
+  SECRET_KEY_BASE: 1a3fb75b72a7197471b9a2e1f9e78a3aa36dd7f394d6d0002338230e0304fbbee9e2ad6a33ec4eda6fd7920688c3e1a48000fa724f56919067709690bf768329

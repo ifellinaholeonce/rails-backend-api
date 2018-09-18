@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,44 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_180_912_015_654) do
+ActiveRecord::Schema.define(version: 2018_09_12_015654) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'line_items', force: :cascade do |t|
-    t.integer 'product_id'
-    t.integer 'order_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['order_id'], name: 'index_line_items_on_order_id'
-    t.index ['product_id'], name: 'index_line_items_on_product_id'
+  create_table "line_items", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+    t.index ["product_id"], name: "index_line_items_on_product_id"
   end
 
-  create_table 'orders', force: :cascade do |t|
-    t.integer 'shop_id'
-    t.integer 'status', default: 0
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['shop_id'], name: 'index_orders_on_shop_id'
-    t.index ['status'], name: 'index_orders_on_status'
+  create_table "orders", force: :cascade do |t|
+    t.integer "shop_id"
+    t.integer "status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shop_id"], name: "index_orders_on_shop_id"
+    t.index ["status"], name: "index_orders_on_status"
   end
 
-  create_table 'products', force: :cascade do |t|
-    t.string 'name', null: false
-    t.string 'description'
-    t.integer 'count', default: 0
-    t.integer 'status', default: 0
-    t.integer 'shop_id'
-    t.integer 'price', default: 0
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['shop_id'], name: 'index_products_on_shop_id'
-    t.index ['status'], name: 'index_products_on_status'
+  create_table "products", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description"
+    t.integer "count", default: 0
+    t.integer "status", default: 0
+    t.integer "shop_id"
+    t.integer "price", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shop_id"], name: "index_products_on_shop_id"
+    t.index ["status"], name: "index_products_on_status"
   end
 
-  create_table 'shops', force: :cascade do |t|
-    t.string 'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "shops", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
 end

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: shopify-internship
+  name: api-service
+spec:
+  type: NodePort
+  clusterIP: 10.35.248.54
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 32752
+    port: 8080
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    run: shopify-internship
+  sessionAffinity: None

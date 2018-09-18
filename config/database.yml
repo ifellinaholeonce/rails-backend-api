@@ -17,12 +17,14 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: db
+  username: postgres
+  password:
+  pool: 5
 
-development:
+production:
   <<: *default
+  database: shopify-internship_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -56,6 +58,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  database: shopify-internship_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -76,12 +79,12 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  host: <%= ENV["DB_HOST"] %>
-  port: <%= ENV["DB_PORT"] %>
-  username: <%= ENV["DB_USER"] %>
-  password: <%= ENV["DB_PASS"] %>
-  database: <%= ENV["DB_DBNAME"] %>
-  variables:
-     statement_timeout: 5000
+development:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: yU8ynGo9GHQN
+  host: 35.202.99.249
+  database: shopify_internship_prod
