@@ -9,6 +9,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Shop.destroy_all
 Product.destroy_all
+Order.destroy_all
+LineItem.destroy_all
+
 shop = Shop.new
 shop.name = 'My Shop'
 if shop.save
@@ -17,12 +20,12 @@ else
   puts 'shop did not save'
 end
 
-2.times do |i|
+10.times do |i|
   product = Product.new
   product.name = "My Product #{i}"
   product.description = 'My Product Description'
-  product.count = 10
-  product.price = 5
+  product.count = rand(10..20)
+  product.price = rand(5..15)
   product.shop = shop
   if product.save
     puts 'product saved'
@@ -31,16 +34,15 @@ end
   end
 end
 
-order = Order.new
-order.shop = shop
-order.save
+10.times do
+  order = Order.new
+  order.shop = shop
+  order.save
 
-line_item_one = LineItem.new
-line_item_one.order = order
-line_item_one.product = Product.first
-line_item_one.save
-
-line_item_two = LineItem.new
-line_item_two.order = order
-line_item_two.product = Product.second
-line_item_two.save
+  rand(2..6).times do |item|
+    line_item = LineItem.new
+    line_item.order = order
+    line_item.product = Product.find(Product.first.id + item)
+    line_item.save
+  end
+end
