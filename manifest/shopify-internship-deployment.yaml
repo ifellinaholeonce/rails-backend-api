@@ -20,3 +20,8 @@ spec:
               secretKeyRef:
                 name: shopify-internship-secrets
                 key: secret-key-base
+          - name: DB_URL
+            valueFrom:
+              secretKeyRef:
+                name: shopify-internship-secrets
+                key: database-url

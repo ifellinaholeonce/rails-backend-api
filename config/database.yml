@@ -84,6 +84,6 @@ production:
   pool: 5
   timeout: 5000
   username: postgres
-  password: yU8ynGo9GHQN
-  host: 35.202.99.249
+  password: <%= ENV["DB_PASSWORD"] %>
+  host: 35.226.96.168
   database: shopify_internship_prod

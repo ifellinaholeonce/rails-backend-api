@@ -1,6 +1,11 @@
 # E-Commerce Backend API
 
-### Available at http://35.221.22.137/api/v1/
+### Available at http://35.221.43.201/api/v1/shops/:id
+
+*available shops are 1 and 2*
+*try **http://35.221.43.201/api/v1/shops/1** to begin*
+
+This was deployed using Docker and GKE.
 
 All data is sent and received as JSON. Built with RoR and FastJsonApi gem.
 For demonstration purposes, the DELETE action is only enabled on line items.
