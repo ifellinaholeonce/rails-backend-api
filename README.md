@@ -7,6 +7,15 @@
 
 This was deployed using Docker and GKE.
 
+TO build locally
+```
+bin/rails db:create
+bin/rails db:migrate
+bin/rails db:seed
+bin/rails s
+Browser to localhost:3000
+```
+
 All data is sent and received as JSON. Built with RoR and FastJsonApi gem.
 For demonstration purposes, the DELETE action is only enabled on line items.
 
